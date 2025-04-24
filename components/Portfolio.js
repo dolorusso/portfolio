@@ -3,31 +3,44 @@ import { motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
-const projects = [
-  { title: 'Proyecto 1', desc: 'Web para restaurante italiano.', img: '/assets/restaurante.png', link: 'https://web-restaurante-pv7v.vercel.app' },
-  { title: 'Proyecto 2', desc: 'Diseño de app de servicios para la casa.', img: '/assets/app.png', link: 'https://www.figma.com/proto/VTCmz5uXVpE13Oqidot6bp/Prototipado?page-id=96%3A1853&node-id=124-3043&p=f&viewport=873%2C364%2C0.19&t=rG8sLexSz7UuBE9I-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A3043' },
-  { title: 'Proyecto 3', desc: 'Blog personal.', img: '/assets/blog.png', link: 'https://blog-personal-w75w.vercel.app' },
+const projectsTop = [
+  { title: 'Proyecto 1', desc: 'Web para restaurante italiano.', img: '/assets/restaurante.png', github: 'https://github.com/doloresrusso/proyecto1' },
+  { title: 'Proyecto 2', desc: 'Diseño de App IOS de servicios para la casa.', img: '/assets/app.png', link: 'https://www.figma.com/proto/VTCmz5uXVpE13Oqidot6bp/Prototipado?page-id=96%3A1853&node-id=124-3043&p=f&viewport=873%2C364%2C0.19&t=rG8sLexSz7UuBE9I-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A3043' },
+  { title: 'Proyecto 3', desc: 'Blog personal.', img: '/assets/blog.png', github: 'https://github.com/doloresrusso/proyecto3' },
+  { title: 'Proyecto 4', desc: 'Datos curiosos sobre gatos.', img: '/assets/gatito.png', github: 'https://github.com/dolorusso/react-APIs-gatitos' },
 ];
 
-// Duplicamos los proyectos varias veces para asegurar un desplazamiento continuo
-const duplicatedProjects = [...projects, ...projects, ...projects, ...projects];
+const projectsBottom = [
+  { title: 'Proyecto 5', desc: 'TO-DO List.', img: '/assets/todolist.png', github: 'https://github.com/dolorusso/todo-list' },
+  { title: 'Proyecto 6', desc: 'Pokedex App.', img: '/assets/pokedex.png', github: 'https://github.com/dolorusso/prueba-tecnica-pokedex' },
+  { title: 'Proyecto 7', desc: 'Trabajo Práctico para la materia Ciencia de Datos.', img: '/assets/vino.png', github: 'https://github.com/dolorusso/ciencia-de-datos_calidad-del-vino' },
+  { title: 'Proyecto 8', desc: 'Portfolio.', img: '/assets/portfolio.png', github: 'https://github.com/dolorusso/portfolio' }, 
+];
 
-export default function Projects() {
+
+const Carousel = ({ projects, direction, carouselId }) => {
   const controls = useAnimation();
   const carouselRef = useRef(null);
 
+ 
+  const duplicatedProjects = [...projects, ...projects, ...projects, ...projects];
+
   useEffect(() => {
     const animateCarousel = async () => {
-      const totalWidth = carouselRef.current?.scrollWidth / 2; // Mitad del ancho total porque duplicamos los proyectos
+      const totalWidth = carouselRef.current?.scrollWidth / 2; 
+      if (!totalWidth) return;
 
-      // Animación infinita
+
+      const startX = direction === 'left' ? 0 : -totalWidth;
+      const endX = direction === 'left' ? -totalWidth : 0;
+
       controls.start({
-        x: -totalWidth,
+        x: [startX, endX],
         transition: {
           x: {
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 50, // Duración para un ciclo completo (ajusta para velocidad)
+            duration: 50, 
             ease: 'linear',
           },
         },
@@ -35,53 +48,120 @@ export default function Projects() {
     };
 
     animateCarousel();
-  }, [controls]);
+  }, [controls, direction]);
+
+  const handleMouseEnter = () => {
+    controls.stop();
+  };
+
+  const handleMouseLeave = () => {
+    const totalWidth = carouselRef.current?.scrollWidth / 2;
+    if (!totalWidth) return;
+
+    const startX = direction === 'left' ? 0 : -totalWidth;
+    const endX = direction === 'left' ? -totalWidth : 0;
+
+    controls.start({
+      x: [startX, endX],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration: 50,
+          ease: 'linear',
+        },
+      },
+    });
+  };
 
   return (
-    <section id="projects" className="py-32 bg-black">
+    <div className="overflow-hidden">
+      <motion.div
+        ref={carouselRef}
+        animate={controls}
+        className="flex space-x-8"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {duplicatedProjects.map((project, index) => (
+          <div key={`${carouselId}-${index}`} className="flex-shrink-0 w-80">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative overflow-hidden rounded-md cursor-pointer group"
+            >
+              <img
+                src={project.img}
+                alt={project.title}
+                className="w-full h-64 object-cover"
+              />
+
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 z-10 opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                </Link>
+              )}
+
+              {project.link ? (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <div className="text-center pointer-events-none">
+                    <p className="text-lg font-semibold text-white mb-2">{project.title}</p>
+                    <p className="text-gray-400">{project.desc}</p>
+                  </div>
+                </Link>
+              ) : (
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-lg font-semibold text-white mb-2">{project.title}</p>
+                    <p className="text-gray-400">{project.desc}</p>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+export default function Projects() {
+  return (
+    <section id="projects" className="py-32 bg-gradient-to-b from-[#20131e] to-black">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-4xl md:text-6xl font-semibold text-white mb-12 text-center"
         >
           Proyectos
         </motion.h2>
-        <div className="overflow-hidden">
-          <motion.div
-            ref={carouselRef}
-            animate={controls}
-            className="flex space-x-8"
-          >
-            {duplicatedProjects.map((project, index) => (
-              <Link
-                key={index}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group flex-shrink-0 w-80" // w-80 = 320px por tarjeta
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="relative overflow-hidden rounded-md cursor-pointer"
-                >
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="text-center pointer-events-none">
-                      <p className="text-gray-400">{project.desc}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </motion.div>
+
+        <div className="mb-12">
+          <Carousel projects={projectsTop} direction="left" carouselId="top" />
+        </div>
+
+        <div className="mb-12">
+          <Carousel projects={projectsBottom} direction="right" carouselId="bottom" />
         </div>
       </div>
     </section>
