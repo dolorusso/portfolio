@@ -153,7 +153,7 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-semibold text-white mb-12 text-center"
         >
-          Proyectos
+          Proyects
         </motion.h2>
 
         <div className="mb-12">
