@@ -4,17 +4,17 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
 const projectsTop = [
-  { title: 'Proyecto 1', desc: 'Web para restaurante italiano.', img: '/assets/restaurante.png', github: 'https://github.com/doloresrusso/proyecto1' },
-  { title: 'Proyecto 2', desc: 'Diseño de App IOS de servicios para la casa.', img: '/assets/app.png', link: 'https://www.figma.com/proto/VTCmz5uXVpE13Oqidot6bp/Prototipado?page-id=96%3A1853&node-id=124-3043&p=f&viewport=873%2C364%2C0.19&t=rG8sLexSz7UuBE9I-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A3043' },
-  { title: 'Proyecto 3', desc: 'Blog personal.', img: '/assets/blog.png', github: 'https://github.com/doloresrusso/proyecto3' },
-  { title: 'Proyecto 4', desc: 'Datos curiosos sobre gatos.', img: '/assets/gatito.png', github: 'https://github.com/dolorusso/react-APIs-gatitos' },
+  { title: 'Web for an Italian restaurant.', desc: 'Next.js, TypeScript, TailwindCSS', img: '/assets/restaurante.png', github: 'https://github.com/doloresrusso/proyecto1' },
+  { title: 'Design of an IOS app for home services.', desc: 'Figma, UX/UI Design', img: '/assets/app.png', link: 'https://www.figma.com/proto/VTCmz5uXVpE13Oqidot6bp/Prototipado?page-id=96%3A1853&node-id=124-3043&p=f&viewport=873%2C364%2C0.19&t=rG8sLexSz7UuBE9I-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A3043' },
+  { title: 'Personal Blog.', desc: 'Next.js, Supabase', img: '/assets/blog.png', github: 'https://github.com/doloresrusso/proyecto3' },
+  { title: 'Fun facts about cats.', desc: 'React.js, APIs: catfact.ninja & The Cat API', img: '/assets/gatito.png', github: 'https://github.com/dolorusso/react-APIs-gatitos' },
 ];
 
 const projectsBottom = [
-  { title: 'Proyecto 5', desc: 'TO-DO List.', img: '/assets/todolist.png', github: 'https://github.com/dolorusso/todo-list' },
-  { title: 'Proyecto 6', desc: 'Pokedex App.', img: '/assets/pokedex.png', github: 'https://github.com/dolorusso/prueba-tecnica-pokedex' },
-  { title: 'Proyecto 7', desc: 'Trabajo Práctico para la materia Ciencia de Datos.', img: '/assets/vino.png', github: 'https://github.com/dolorusso/ciencia-de-datos_calidad-del-vino' },
-  { title: 'Proyecto 8', desc: 'Portfolio.', img: '/assets/portfolio.png', github: 'https://github.com/dolorusso/portfolio' }, 
+  { title: 'TO-DO List.', desc: 'Next.js, PostgreSQL, Prisma ORM', img: '/assets/todolist.png', github: 'https://github.com/dolorusso/todo-list' },
+  { title: 'Pokedex App.', desc: 'Next.js, API: PokeAPI', img: '/assets/pokedex.png', github: 'https://github.com/dolorusso/prueba-tecnica-pokedex' },
+  { title: 'Practical assignment for the Data Science course.', desc: 'Python, Jupyter Lab, EDA, Logistic Regression', img: '/assets/vino.png', github: 'https://github.com/dolorusso/ciencia-de-datos_calidad-del-vino' },
+  { title: 'Portfolio', desc: 'Next.js, EmailJS', img: '/assets/portfolio.png', github: 'https://github.com/dolorusso/portfolio' }, 
 ];
 
 
@@ -153,7 +153,7 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-semibold text-white mb-12 text-center"
         >
-          Proyects
+          Projects
         </motion.h2>
 
         <div className="mb-12">
