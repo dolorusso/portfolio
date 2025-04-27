@@ -37,15 +37,15 @@ export default function Navbar() {
             About
           </Link>
           <Link href="#projects" className="text-white  hover:bg-[#5e3255ea] hover:rounded-full hover: px-2 transition-all">
-            Proyects
+            Projects
           </Link>
           <Link href="#contact" className="text-white hover:bg-[#5e3255ea] hover:rounded-full hover: px-2 transition-all">
             Contact
           </Link>
         </div>
-        
+      {/*  
         <a
-          href="/path-to-your-cv.pdf"
+          href="/assets/cv-dolores_russo.pdf"
           download
           className="text-white bg-[#5e3255ea] hover:bg-[#97588bea] px-4 py-1 rounded-full transition-all flex items-center space-x-1"
         >
@@ -54,6 +54,7 @@ export default function Navbar() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"></path>
           </svg>
         </a>
+      */}
       </div>
     </motion.nav>
   );
