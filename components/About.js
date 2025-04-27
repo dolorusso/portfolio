@@ -7,9 +7,8 @@ export default function About() {
       id="services"
       className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-[#20131e] relative overflow-hidden py-12"
     >
-      {/* Main content */}
+
       <div className="z-10 max-w-5xl mx-auto px-4">
-        {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -19,7 +18,6 @@ export default function About() {
           About Me
         </motion.h2>
 
-        {/* Personal Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +48,7 @@ export default function About() {
             <p className="text-md  font-light text-white">
               2022 – Present
             </p>
-            <p className="text-sm font-light text-white mt-2">
+            <p className="text-sm font-light text-gray-400 mt-2">
               Universidad Nacional del Centro de la Provincia de Buenos Aires, Facultad de Ciencias Exactas
             </p>
             <p className="text-sm font-medium text-white mt-3">
@@ -70,19 +68,16 @@ export default function About() {
             <p className="text-md font-medium text-white">
               Frontend Developer (Freelance) 2024 – Present
             </p>
-            <p className="text-sm font-light text-white mt-1">
-              Developed responsive web applications using React.js, Next.js, and Tailwind CSS.
-            </p>
             <p className="text-md  font-medium text-white mt-3">
               Tutor, Facultad de Ciencias Exactas 2023 – Present
             </p>
-            <p className="text-sm font-light text-white mt-1">
+            <p className="text-sm font-light text-gray-400 mt-1">
               Guided over 50 first-year students.
             </p>
             <p className="text-md font-medium text-white mt-3">
               Teaching Assistant 2024 – Present
             </p>
-            <p className="text-sm font-light text-white mt-1">
+            <p className="text-sm font-light text-gray-400 mt-1">
               Provided materials and assisted in designing and grading exams.
             </p>
           </motion.div>
@@ -96,8 +91,8 @@ export default function About() {
             <h3 className="text-2xl font-semibold text-[#683c61] mb-4 border-b-2 border-[#683c61] pb-2">
               Extra
             </h3>
-            <p className="text-md font-medium text-white">
-              Languages
+            <p className="text-md font-medium text-[#8f5385]">
+              -Languages-
             </p>
             <p className="text-sm font-light text-white mt-1">
               Spanish: Native
@@ -105,14 +100,14 @@ export default function About() {
             <p className="text-sm font-light text-white mt-1">
               English: Upper Intermediate (B2 Certificate)
             </p>
-            <p className="text-md font-medium text-white mt-3">
-              Technical Skills
+            <p className="text-md font-medium text-[#8f5385] mt-3">
+              -Technical Skills-
             </p>
             <p className="text-sm font-light text-white mt-1">
               JavaScript, TypeScript, Java, Python, SQL, React.js, Next.js, Node.js, CSS, TailwindCSS, WordPress, Figma, PostgreSQL, Prisma ORM
             </p>
-            <p className="text-md font-medium text-white mt-3">
-              Soft Skills
+            <p className="text-md font-medium text-[#8f5385] mt-3">
+              -Soft Skills-
             </p>
             <p className="text-sm poppins-text font-light text-white mt-1">
               Commitment, Adaptability, Effective Communication, Leadership, Teamwork
