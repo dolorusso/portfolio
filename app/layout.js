@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'DMR - Transformamos tus ideas',
-  description: 'Marcas impactantes y experiencias digitales únicas',
+  title: 'DMR - Software Developer',
+  description: 'Portfolio',
 };
 
 export default function RootLayout({ children }) {
