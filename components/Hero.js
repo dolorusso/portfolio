@@ -1,11 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 export default function Home() {
   return (
     <section
-      id="hero"
+      id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#20131e] to-black relative overflow-hidden"
     >
       <div className="flex flex-col md:flex-row items-center justify-between z-10 max-w-5xl mx-auto px-4 gap-6 md:gap-8">

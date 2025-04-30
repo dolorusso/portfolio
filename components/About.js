@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function About() {
   return (
     <section
-      id="services"
+      id="about"
       className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-[#20131e] relative overflow-hidden py-12"
     >
 
