@@ -25,7 +25,7 @@ export default function About() {
           className="mb-12 text-center"
         >
           <h3 className="text-2xl font-semibold poppins-text text-white mb-2">
-            Dolores Magalí Russo, 21 Years Old
+            Dolores Magalí Russo, 21 years old
           </h3>
           <p className="text-lg poppins-text font-light text-white">
             Tandil, Buenos Aires, Argentina | Software Engineering Student & Web Developer
@@ -75,7 +75,7 @@ export default function About() {
               Guided over 50 first-year students.
             </p>
             <p className="text-md font-medium text-white mt-3">
-              Teaching Assistant 2024 – Present
+              Student Assistant, Facultad de Ciencias Exactas 2024 – Present
             </p>
             <p className="text-sm font-light text-gray-400 mt-1">
               Provided materials and assisted in designing and grading exams.
