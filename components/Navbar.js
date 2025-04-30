@@ -57,7 +57,7 @@ export default function Navbar() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="md:hidden fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-sm"
+        className="md:hidden fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-sm"
       >
         <div className="px-4">
           <div className="flex items-center justify-between h-16">
