@@ -36,10 +36,10 @@ export default function Navbar() {
         >
           <span className="text-white text-lg glow-text">Dolores Russo</span>
           <div className="flex space-x-6">
-            <Link href="#hero" className="text-white hover:bg-[#5e3255ea] hover:rounded-full hover:px-2 transition-all">
+            <Link href="#home" className="text-white hover:bg-[#5e3255ea] hover:rounded-full hover:px-2 transition-all">
               Home
             </Link>
-            <Link href="#services" className="text-white hover:bg-[#5e3255ea] hover:rounded-full hover:px-2 transition-all">
+            <Link href="#about" className="text-white hover:bg-[#5e3255ea] hover:rounded-full hover:px-2 transition-all">
               About
             </Link>
             <Link href="#projects" className="text-white hover:bg-[#5e3255ea] hover:rounded-full hover:px-2 transition-all">
@@ -84,14 +84,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col space-y-2 px-2 pt-2 pb-3">
               <Link
-                href="#hero"
+                href="#home"
                 onClick={toggleMenu}
                 className="text-white hover:bg-[#5e3255ea] hover:rounded-md px-3 py-2 transition-all"
               >
                 Home
               </Link>
               <Link
-                href="#services"
+                href="#about"
                 onClick={toggleMenu}
                 className="text-white hover:bg-[#5e3255ea] hover:rounded-md px-3 py-2 transition-all"
               >
