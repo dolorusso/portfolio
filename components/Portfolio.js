@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
 const projectsTop = [
-  { title: 'Web for an Italian restaurant.', desc: 'Next.js, TypeScript, TailwindCSS', img: '/assets/restaurante.png', github: 'https://github.com/doloresrusso/web-restaurante' },
+  { title: 'Web for an Italian restaurant.', desc: 'Next.js, TypeScript, TailwindCSS', img: '/assets/restaurante.png', github: 'https://github.com/dolorusso/web-restaurante' },
   { title: 'Design of an IOS app for home services.', desc: 'Figma, UX/UI Design', img: '/assets/app.png', link: 'https://www.figma.com/proto/VTCmz5uXVpE13Oqidot6bp/Prototipado?page-id=96%3A1853&node-id=124-3043&p=f&viewport=873%2C364%2C0.19&t=rG8sLexSz7UuBE9I-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=124%3A3043' },
-  { title: 'Personal Blog.', desc: 'Next.js, Supabase', img: '/assets/blog.png', github: 'https://github.com/doloresrusso/blog-personal' },
+  { title: 'Personal Blog.', desc: 'Next.js, Supabase', img: '/assets/blog.png', github: 'https://github.com/dolorusso/blog-personal' },
   { title: 'Fun facts about cats.', desc: 'React.js, APIs: catfact.ninja & The Cat API', img: '/assets/gatito.png', github: 'https://github.com/dolorusso/react-APIs-gatitos' },
 ];
 
