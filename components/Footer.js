@@ -7,14 +7,15 @@ export default function Footer() {
     <footer className="fixed bottom-0 w-full pt-4 pb-4 bg-transparent backdrop-blur-md text-white z-10">
       <div className="w-full flex justify-end pr-32">
         <div className="flex justify-end space-x-6">
-          {[
+          {[{ icon: FaLinkedin, href: 'https://www.linkedin.com/in/dolores-russo-390b5127a/' },
             { icon: FaTwitter, href: 'https://x.com/dolorusso1' },
-            { icon: FaLinkedin, href: '#' },
             { icon: FaInstagram, href: 'https://www.instagram.com/dolo_russo/' },
           ].map((social, index) => (
             <motion.a
               key={index}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
